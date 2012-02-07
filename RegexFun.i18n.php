@@ -120,6 +120,15 @@ $messages['nl'] = array(
 	'regexfun-limit-exceed' => 'Het maximale aantal van {{PLURAL:$1|$1|$1}} af te handelen reguliere expressies is bereikt.',
 );
 
+/** Polish (Polski)
+ * @author BeginaFelicysym
+ */
+$messages['pl'] = array(
+	'regexfun-desc' => 'Dodaje funkcje parsera umożliwiające korzystanie z wyrażeń regularnych na stronach wiki',
+	'regexfun-invalid' => 'Wyrażenie regularne "$1" jest nieprawidłowe.',
+	'regexfun-limit-exceed' => 'Osiągnięto maksimum  {{PLURAL:$1|$1 obsługiwanego wyrażenia regularnego "Regex Fun"|$1 obsługiwanych wyrażeń regularnych "Regex Fun"|$1 obsługiwanych wyrażeń regularnych "Regex Fun"}}.',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Dragonòt
