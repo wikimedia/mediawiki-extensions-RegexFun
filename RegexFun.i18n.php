@@ -65,6 +65,15 @@ $messages['gl'] = array(
 	'regexfun-limit-exceed' => 'Atinxiuse o número máximo {{PLURAL:$1|dunha manipulación de expresión regular "Regex Fun"|de $1 manipulacións de expresións regulares "Regex Fun"}}.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'regexfun-desc' => 'הוספת פונקציות מפענח שמפאשרפות שימוש בביטויים רגולריים בדפי ויקי',
+	'regexfun-invalid' => 'הביטוי הרגולרי "$1" אינו תקין.',
+	'regexfun-limit-exceed' => 'בוצע מספר מרבי של {{PLURAL:$1|טיפולים בביטויים רגולריים של "Regex Fun"}}',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
