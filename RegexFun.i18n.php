@@ -28,6 +28,15 @@ $messages['qqq'] = array(
 	'regexfun-limit-exceed' => '$1 is the in LocalSettings.php defined limit of total Regex Fun function calls (per parser process) dealing with regular expressions.',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'regexfun-desc' => 'Amiesta funciones analítiques que permiten usar espresiones regulares nes páxines wiki',
+	'regexfun-invalid' => 'La espresión regular "$1" ye inválida.',
+	'regexfun-limit-exceed' => 'Se llegó al númberu máximu {{PLURAL:$1|d\'una xestión d\'espresiones regulares "Regex Fun"|de $1 xestiones d\'espresiones regulares "Regex Fun"}}.',
+);
+
 /** German (Deutsch)
  * @author Daniel Werner
  * @author Kghbln
