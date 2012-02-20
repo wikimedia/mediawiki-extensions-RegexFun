@@ -37,6 +37,15 @@ $messages['ast'] = array(
 	'regexfun-limit-exceed' => 'Se llegó al númberu máximu {{PLURAL:$1|d\'una xestión d\'espresiones regulares "Regex Fun"|de $1 xestiones d\'espresiones regulares "Regex Fun"}}.',
 );
 
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'regexfun-desc' => 'Дадае функцыі парсэра для карыстаньня рэгулярных выразаў на вікістаронках',
+	'regexfun-invalid' => 'Рэгулярны выраз «$1» няслушны.',
+	'regexfun-limit-exceed' => 'Дасягнутае абмежаваньне ў $1 {{PLURAL:$1|выклік|выклікі|выклікаў}} функцыяў Regex Fun.',
+);
+
 /** German (Deutsch)
  * @author Daniel Werner
  * @author Kghbln
