@@ -65,6 +65,15 @@ $messages['dsb'] = array(
 	'regexfun-limit-exceed' => 'Maksimalna licba {{PLURAL:$1|$1 pśez "Regex Fun" wobźěłanego regularnego wuraza|$1 pśez "Regex Fun" wobźěłaneju regularneju wurazowu|$1 pśez "Regex Fun" wobźěłanych regularnych wurazow|$1 pśez "Regex Fun" wobźěłanych regularnych wurazow}} jo dojśpjona.',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'regexfun-desc' => 'Añade funciones del analizador (parser) que permiten el uso de expresiones regulares en las páginas wiki',
+	'regexfun-invalid' => 'La expresión regular "$1" no es válida.',
+	'regexfun-limit-exceed' => 'Se ha alcanzado el número máximo {{PLURAL:$1|de una manipulación de expresión regular "Regex Fun"|de $1 manipulaciones de expresiones regulares "Regex Fun"}}.',
+);
+
 /** French (Français)
  * @author Gomoko
  */
