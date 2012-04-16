@@ -46,6 +46,14 @@ $messages['be-tarask'] = array(
 	'regexfun-limit-exceed' => 'Дасягнутае абмежаваньне ў $1 {{PLURAL:$1|выклік|выклікі|выклікаў}} функцыяў Regex Fun.',
 );
 
+/** Czech (Česky)
+ * @author Reaperman
+ */
+$messages['cs'] = array(
+	'regexfun-desc' => 'Přidává funkce parseru, které umožňují používat regulární výrazy na stránkách wiki',
+	'regexfun-invalid' => 'Regulární výraz „$1“ je neplatný.',
+);
+
 /** German (Deutsch)
  * @author Daniel Werner
  * @author Kghbln
