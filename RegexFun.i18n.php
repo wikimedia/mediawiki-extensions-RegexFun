@@ -193,3 +193,10 @@ $messages['pms'] = array(
 	'regexfun-limit-exceed' => 'Rivà al màssim ëd {{PLURAL:$1|$1 gestor d\'espression regolar "Regex Fun"|$1 gestor d\'espression regolar "Regex Fun"}}.',
 );
 
+/** Russian (Русский)
+ * @author Haffman
+ */
+$messages['ru'] = array(
+	'regexfun-invalid' => 'Регулярное выражение "$1" неверно.',
+);
+
