@@ -127,6 +127,14 @@ $messages['ia'] = array(
 	'regexfun-limit-exceed' => 'Le maximo de $1 {{PLURAL:$1|processamento|processamentos}} de expression regular "Regex Fun" ha essite attingite.',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'regexfun-desc' => "Aggiunge funzioni parser che permettono l'uso di espressioni regolari nelle pagine wiki",
+	'regexfun-invalid' => 'L\'espressione regolare "$1" non è valida.',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Shirayuki
