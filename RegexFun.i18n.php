@@ -133,6 +133,7 @@ $messages['ia'] = array(
 $messages['it'] = array(
 	'regexfun-desc' => "Aggiunge funzioni parser che permettono l'uso di espressioni regolari nelle pagine wiki",
 	'regexfun-invalid' => 'L\'espressione regolare "$1" non è valida.',
+	'regexfun-limit-exceed' => 'Il massimo di {{PLURAL:$1|$1 espressione regolare "Regex Fun" gestita|$1 espressioni regolari "Regex Fun" gestite}} raggiunto.',
 );
 
 /** Japanese (日本語)
