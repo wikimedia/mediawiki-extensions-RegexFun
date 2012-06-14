@@ -28,7 +28,7 @@ $messages['qqq'] = array(
 	'regexfun-limit-exceed' => '$1 is the in LocalSettings.php defined limit of total Regex Fun function calls (per parser process) dealing with regular expressions.',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -46,7 +46,7 @@ $messages['be-tarask'] = array(
 	'regexfun-limit-exceed' => 'Дасягнутае абмежаваньне ў $1 {{PLURAL:$1|выклік|выклікі|выклікаў}} функцыяў Regex Fun.',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Reaperman
  */
 $messages['cs'] = array(
@@ -73,7 +73,7 @@ $messages['dsb'] = array(
 	'regexfun-limit-exceed' => 'Maksimalna licba {{PLURAL:$1|$1 pśez "Regex Fun" wobźěłanego regularnego wuraza|$1 pśez "Regex Fun" wobźěłaneju regularneju wurazowu|$1 pśez "Regex Fun" wobźěłanych regularnych wurazow|$1 pśez "Regex Fun" wobźěłanych regularnych wurazow}} jo dojśpjona.',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -82,7 +82,7 @@ $messages['es'] = array(
 	'regexfun-limit-exceed' => 'Se ha alcanzado el número máximo {{PLURAL:$1|de una manipulación de expresión regular "Regex Fun"|de $1 manipulaciones de expresiones regulares "Regex Fun"}}.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  */
 $messages['fr'] = array(
@@ -118,7 +118,7 @@ $messages['hsb'] = array(
 	'regexfun-limit-exceed' => 'Maksimalna ličba {{PLURAL:$1|$1 přez "Regex Fun" wobdźěłaneho regularneho wuraza|$1 přez "Regex Fun" wobdźěłaneju regularneju wurazow|$1 přez "Regex Fun" wobdźěłanych regularnych wurazow|$1 přez "Regex Fun" wobdźěłanych regularnych wurazow}} je docpěta.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -146,7 +146,7 @@ $messages['ja'] = array(
 	'regexfun-limit-exceed' => 'Regex Fun の{{PLURAL:$1|正規表現処理の最大数 $1}} に達しました。',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -183,7 +183,7 @@ $messages['nl'] = array(
 	'regexfun-limit-exceed' => 'Het maximale aantal van {{PLURAL:$1|$1|$1}} af te handelen reguliere expressies is bereikt.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  */
 $messages['pl'] = array(
@@ -202,7 +202,7 @@ $messages['pms'] = array(
 	'regexfun-limit-exceed' => 'Rivà al màssim ëd {{PLURAL:$1|$1 gestor d\'espression regolar "Regex Fun"|$1 gestor d\'espression regolar "Regex Fun"}}.',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Haffman
  */
 $messages['ru'] = array(
