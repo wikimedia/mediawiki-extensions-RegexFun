@@ -142,7 +142,7 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'regexfun-desc' => 'ウィキページ内で正規表現の使用を可能にするパーサー関数を追加する',
-	'regexfun-invalid' => '正規表現「$1」は不正です。',
+	'regexfun-invalid' => '正規表現「$1」は正しくありません。',
 	'regexfun-limit-exceed' => 'Regex Fun の{{PLURAL:$1|正規表現処理の最大数 $1}} に達しました。',
 );
 
