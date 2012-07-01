@@ -37,7 +37,7 @@ $messages['ast'] = array(
 	'regexfun-limit-exceed' => 'Se llegó al númberu máximu {{PLURAL:$1|d\'una xestión d\'espresiones regulares "Regex Fun"|de $1 xestiones d\'espresiones regulares "Regex Fun"}}.',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -64,7 +64,7 @@ $messages['de'] = array(
 	'regexfun-limit-exceed' => 'Die maximale Anzahl von {{PLURAL:$1|einem verarbeitbaren regulären Ausdruck|$1 verarbeitbaren regulären Ausdrücken}} ist erreicht.',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -91,7 +91,7 @@ $messages['fr'] = array(
 	'regexfun-limit-exceed' => 'Le nombre maximal de {{PLURAL:$1|$1 gestion d\'expression régulière "Regex Fun"|$1 gestions d\'expression régulière "Regex Fun"}} a été atteint.',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -109,7 +109,7 @@ $messages['he'] = array(
 	'regexfun-limit-exceed' => 'בוצע מספר מרבי של {{PLURAL:$1|טיפולים בביטויים רגולריים של "Regex Fun"}}',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
