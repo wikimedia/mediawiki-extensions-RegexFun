@@ -164,13 +164,13 @@ $messages['ms'] = array(
 	'regexfun-limit-exceed' => 'Had maksimum $1 kendalian ungkapan nalar "Regex Fun" dicapai.',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Event
  */
 $messages['nb'] = array(
 	'regexfun-desc' => 'Legg til parserfunksjoner som tillater bruk av regulæruttrykk på wikisider',
 	'regexfun-invalid' => 'Regulæruttrykket "$1" er ugyldig.',
-	'regexfun-limit-exceed' => 'Det maksimalt antallet på {{PLURAL:$1|$1 "Regex Fun"-regulæruttrykk|$1 "Regex Fun"-regulæruttrykk}} er nådd.',
+	'regexfun-limit-exceed' => 'Maksimalt antall håndteringer på {{PLURAL:$1|$1 "Regex Fun"-regulæruttrykk|$1 "Regex Fun"-regulæruttrykk}} er nådd.',
 );
 
 /** Dutch (Nederlands)
