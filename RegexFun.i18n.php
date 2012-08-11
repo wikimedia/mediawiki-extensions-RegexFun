@@ -59,7 +59,7 @@ $messages['cs'] = array(
  * @author Kghbln
  */
 $messages['de'] = array(
-	'regexfun-desc' => 'Ergänzt Parserfunktionen, die die Verwendung regulärer Ausdrücke auf Wiki-Seiten ermöglichen',
+	'regexfun-desc' => 'Ergänzt Parserfunktionen, die die Verwendung regulärer Ausdrücke auf Wikiseiten ermöglichen',
 	'regexfun-invalid' => '„$1“ ist kein gültiger regulärer Ausdruck.',
 	'regexfun-limit-exceed' => 'Die maximale Anzahl von {{PLURAL:$1|einem verarbeitbaren regulären Ausdruck|$1 verarbeitbaren regulären Ausdrücken}} ist erreicht.',
 );
@@ -144,6 +144,15 @@ $messages['ja'] = array(
 	'regexfun-desc' => 'ウィキページ内で正規表現の使用を可能にするパーサー関数を追加する',
 	'regexfun-invalid' => '正規表現「$1」は正しくありません。',
 	'regexfun-limit-exceed' => 'Regex Fun の{{PLURAL:$1|正規表現処理の最大数 $1}} に達しました。',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'regexfun-desc' => 'Bränk Funxjuhne en et Wiki, öm <i lang="en">regular expressions</i> en Wiki-Sigge bruche ze künne.',
+	'regexfun-invalid' => '„$1“ es kein jölteje <i lang="en">regular expression</i>.',
+	'regexfun-limit-exceed' => 'Et {{PLURAL:$1|es mieh wi eine Oproof|sinn_er mieh wi $1 Oproofe|es keine Oproof}} för <i lang="en">regular expressions</i> ze verärbeide en heh dä Sigg opjetrodde. Dat es ze vill.',
 );
 
 /** Macedonian (македонски)
