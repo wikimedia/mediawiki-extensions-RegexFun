@@ -37,7 +37,7 @@ $messages['ast'] = array(
 	'regexfun-limit-exceed' => 'Se llegó al númberu máximu {{PLURAL:$1|d\'una xestión d\'espresiones regulares "Regex Fun"|de $1 xestiones d\'espresiones regulares "Regex Fun"}}.',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -173,7 +173,7 @@ $messages['ms'] = array(
 	'regexfun-limit-exceed' => 'Had maksimum $1 kendalian ungkapan nalar "Regex Fun" dicapai.',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Event
  */
 $messages['nb'] = array(
