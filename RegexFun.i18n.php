@@ -226,4 +226,3 @@ $messages['tl'] = array(
 	'regexfun-invalid' => 'Hindi katanggap-tanggap ang karaniwang pagpapahayag na "$1".',
 	'regexfun-limit-exceed' => 'Naabot na ang pinaka mataas na {{PLURAL:$1|$1 na paghawak ng karaniwang pagpapahayag ng "Regex Fun"|$1 na mga paghawak ng karaniwang pagpapahayag ng "Regex Fun"}}',
 );
-
