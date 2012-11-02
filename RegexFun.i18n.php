@@ -226,3 +226,12 @@ $messages['tl'] = array(
 	'regexfun-invalid' => 'Hindi katanggap-tanggap ang karaniwang pagpapahayag na "$1".',
 	'regexfun-limit-exceed' => 'Naabot na ang pinaka mataas na {{PLURAL:$1|$1 na paghawak ng karaniwang pagpapahayag ng "Regex Fun"|$1 na mga paghawak ng karaniwang pagpapahayag ng "Regex Fun"}}',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'regexfun-desc' => '增加解析器函数，允许在wiki页面里使用正则表达式',
+	'regexfun-invalid' => '正则表达式“$1”无效。',
+	'regexfun-limit-exceed' => '正则表达式超过“Regex Fun”的最大值限制$1。',
+);
