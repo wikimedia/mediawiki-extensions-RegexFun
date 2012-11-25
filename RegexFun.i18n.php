@@ -82,6 +82,14 @@ $messages['es'] = array(
 	'regexfun-limit-exceed' => 'Se ha alcanzado el número máximo {{PLURAL:$1|de una manipulación de expresión regular "Regex Fun"|de $1 manipulaciones de expresiones regulares "Regex Fun"}}.',
 );
 
+/** Persian (فارسی)
+ * @author ZxxZxxZ
+ */
+$messages['fa'] = array(
+	'regexfun-desc' => 'توابع تجزیه‌کننده‌ای را می‌افزاید که قابلیت استفاده از عبارت‌های باقاعده را در صفحه‌های ویکی می‌دهد',
+	'regexfun-invalid' => 'عبارت باقاعدهٔ «$1» نامعتبر است',
+);
+
 /** French (français)
  * @author Gomoko
  */
