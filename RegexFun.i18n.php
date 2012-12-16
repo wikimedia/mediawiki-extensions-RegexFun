@@ -23,8 +23,10 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Daniel Werner
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
+	'regexfun-desc' => '{{desc|name=Regex Fun|url=http://www.mediawiki.org/wiki/Extension:Regex_Fun}}',
 	'regexfun-limit-exceed' => '$1 is the in LocalSettings.php defined limit of total Regex Fun function calls (per parser process) dealing with regular expressions.',
 );
 
