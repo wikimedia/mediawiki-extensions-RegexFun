@@ -237,6 +237,15 @@ $messages['tl'] = array(
 	'regexfun-limit-exceed' => 'Naabot na ang pinaka mataas na {{PLURAL:$1|$1 na paghawak ng karaniwang pagpapahayag ng "Regex Fun"|$1 na mga paghawak ng karaniwang pagpapahayag ng "Regex Fun"}}',
 );
 
+/** Ukrainian (українська)
+ * @author Ата
+ */
+$messages['uk'] = array(
+	'regexfun-desc' => 'Додає парсерні функції, що дозволяють використовувати регулярні вирази у вікі-сторінках',
+	'regexfun-invalid' => 'Регулярний вираз "$1" є неприпустимим.',
+	'regexfun-limit-exceed' => 'Досягнуто максимум {{PLURAL:$1|$1 "Regex Fun" звернення до регулярного виразу|$1 "Regex Fun" звернень до регулярного виразу}}.',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
  */
