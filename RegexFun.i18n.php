@@ -156,6 +156,15 @@ $messages['ja'] = array(
 	'regexfun-limit-exceed' => 'Regex Fun の{{PLURAL:$1|正規表現処理の最大数 $1}} に達しました。',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'regexfun-desc' => '위키 문서 안에 정규 표현식의 사용을 허용하는 파서 함수 추가',
+	'regexfun-invalid' => '"$1" 정규 표현식은 잘못되었습니다.',
+	'regexfun-limit-exceed' => '{{PLURAL:$1|"정규표현 함수" 정규 표현식 처리의 최대 $1개}}에 도달했습니다.',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
