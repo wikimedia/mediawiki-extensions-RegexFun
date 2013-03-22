@@ -233,6 +233,15 @@ $messages['pms'] = array(
 	'regexfun-limit-exceed' => 'Rivà al màssim ëd {{PLURAL:$1|$1 gestor d\'espression regolar "Regex Fun"|$1 gestor d\'espression regolar "Regex Fun"}}.',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'regexfun-desc' => "Aggiunge funziune analizzatrice pe permettere l'ause de le espressiune regolare jndr'à le pàggene de uicchi",
+	'regexfun-invalid' => 'L\'espressione regolare "$1" jè invalide.',
+	'regexfun-limit-exceed' => 'Massime de {{PLURAL:$1|$1 "Regex Fun" gestione de espressione regolare|$1 "Regex Fun" gestione de espressiune regolare}} raggiunde.',
+);
+
 /** Russian (русский)
  * @author Haffman
  */
