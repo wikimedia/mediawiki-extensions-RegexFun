@@ -1,7 +1,7 @@
  Changelog:
  ==========
 
- * (trunk) -- Version 1.1
+ * (git HEAD) -- Version 1.1
    - '#regex' in replace mode with 'e' flag doesn't require escaped replacement string anymore.
      Instead of something like "{{((}}#if:$2{{!}}$2{{!}}$1{{))}}", "{{#if:$2|$2|$1}}" can be used.
    - '#regex' with 'e' flag now first escapes matches before putting them into the back-references
@@ -11,6 +11,7 @@
      template followed by a template call using '#regex' as well with '#regex_var after that template
 	 call will now access the variable from the '#regex' within the same page/template.
    - Changes in ExtRegexFun::doPregReplace(). Other extensions using this might have to adjust usage.
+   - Added extensive parser tests.
  
 
  * December 5, 2011 -- Version 1.0.2
