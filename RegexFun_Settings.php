@@ -18,11 +18,11 @@
 
 /**
  * Allows to define functions which should not be available within the wiki.
- * 
+ *
  * @example
  * # disable '#regexall' and '#regex_var' functions:
  * $egRegexFunDisabledFunctions = array( 'regexall', 'regex_var' );
- * 
+ *
  * @since 1.0.1
  * @var array
  */
@@ -37,7 +37,7 @@ $egRegexFunDisabledFunctions = array();
  * affected. When the limit is exceeded, a '#iferror' catchable error message
  * will be put out instead of the result of the function.
  * The limit can be set to -1 to disable the limit (default).
- * 
+ *
  * @since 1.0.1
  * @var integer
  */
@@ -48,9 +48,9 @@ $egRegexFunMaxRegexPerParse = -1;
  * call within matching back-reference values by '#regex' with 'e' flags in use. By replacing these special
  * characters before including the back-references values into the replacement string, these special
  * characters can't modify wiki syntax within the replacement code.
- * 
+ *
  * If this is set to null, the old behavior will be active.
- * 
+ *
  * @since 1.1
  * @var array|null
  */

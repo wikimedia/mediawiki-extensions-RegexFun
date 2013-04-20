@@ -4,7 +4,7 @@
  * Internationalisation file of the 'Regex Fun' extension
  *
  * @since 1.0
- * 
+ *
  * @file RegexFun.i18n.php
  * @ingroup RegexFun
  * @author Daniel Werner < danweetz@web.de >

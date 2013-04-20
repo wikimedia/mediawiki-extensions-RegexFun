@@ -37,7 +37,7 @@
    - #regexall
    - #regex_var
    - #regexquote
-   
+
    Main features:
    - Searching within strings, using regular expression.
    - Replacing within strings, using regular expression.
@@ -53,7 +53,7 @@
      a MediaWiki context. Instead of executing php code within the replacement string, the 'e'
      flag now causes the replacement string to be parsed after references ('$1', '\1') are
      replaced. This allows stuff like "{{((}}Template{{!}}$1{{))}}" within the replacement.
-   
+
    Changes since earlier versions (trunk and earlier, non-public):
    - '#regexsearch' parser function removed. Instead there is a special flag 'r' now which leads
      to the same result if #regex and replacement is being used: '' as output if nothing replaced.
@@ -63,4 +63,3 @@
    - '#regex' no longer returns its value as parsed wikitext (option 'noparse' => false) instead
      the 'e' flag can be used (although not exactly the same).
    - contributed under ISC License, maintained in wikimedia.org svn.
-   
