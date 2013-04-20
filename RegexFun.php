@@ -6,8 +6,7 @@
  * 
  * Documentation: http://www.mediawiki.org/wiki/Extension:Regex_Fun
  * Support:       http://www.mediawiki.org/wiki/Extension_talk:Regex_Fun
- * Source code:   http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/RegexFun
- * 
+ *
  * @version: 1.1
  * @license: ISC license
  * @author:  Daniel Werner < danweetz@web.de >
@@ -42,6 +41,8 @@ $wgHooks['ParserLimitReport'  ][] = 'ExtRegexFun::onParserLimitReport';
 // Include the settings file:
 require_once ExtRegexFun::getDir() . '/RegexFun_Settings.php';
 
+// parser tests registration:
+$wgParserTestFiles[] = ExtRegexFun::getDir() . '/regexfunParserTests.txt';
 
 /**
  * Extension class with all the regex functions functionality

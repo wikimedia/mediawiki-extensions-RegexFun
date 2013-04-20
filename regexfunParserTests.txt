@@ -1,0 +1,467 @@
+# MediaWiki 'Regex Fun' extension Parser test cases
+# @Author: Daniel Werner < danweetz@web.de >
+# @since 1.1
+
+!! functionhooks
+regex
+!! endfunctionhooks
+
+# Templates for tests:
+# since template:! is needed by other tests, but creating it twice will fail but not having it at all when
+# running these tests only fill fail as well, we use the 'parsertest.regexfun' prefix to avoid duplicates.
+
+!!article
+Template:parsertest.regexfun:!
+!!text
+|
+!!endarticle
+
+!!article
+Template:parsertest.regexfun:((
+!!text
+{{
+!!endarticle
+
+!!article
+Template:parsertest.regexfun:))
+!!text
+}}
+!!endarticle
+
+##
+## #regex
+##
+
+!! test
+Simple regular expression #regex
+!! input
+"{{#regex:abc 20,30,40 | /\d+/ }}"
+!!result
+<p>"20"
+</p>
+!! end
+
+
+!! test
+Simple replacement with #regex
+!! input
+"{{#regex:abc 20,30,40 | %\d% | # }}"
+!!result
+<p>"abc ##,##,##"
+</p>
+!! end
+
+
+!! test
+Replace something with empty string
+!! input
+"{{#regex:abc 20,30,40 | %\d% | }}"
+!!result
+<p>"abc ,,"
+</p>
+!! end
+
+
+!! test
+Nothing to replace
+!! input
+"{{#regex:abc 20,30,40 | !foo! | xx }}"
+!!result
+<p>"abc 20,30,40"
+</p>
+!! end
+
+
+!! test
+'i' flag test
+!! input
+"{{#regex:TeSt | /test/i }}"
+!!result
+<p>"TeSt"
+</p>
+!! end
+
+
+!! test
+Safety test, script tag injection
+!! input
+"{{#regex:<script>alert("foo")</script>| /.+/ }}"
+!!result
+<p>"&lt;script&gt;alert("foo")&lt;/script&gt;"
+</p>
+!! end
+
+
+!! test
+Special chars
+!! input
+"{{#regex: foo{{parsertest.regexfun:!}}oo | /(o.o)/ | $1 }}", "{{#regex_var: $1 }}"
+!!result
+<p>"foo|oo", "o|o"
+</p>
+!! end
+
+
+##
+## 'r' flag test
+##
+
+!! test
+#regex test with 'r' flag where it should have no effect
+!! input
+"{{#regex:abc 20,30,40 | /\d+/r }}"
+!!result
+<p>"20"
+</p>
+!! end
+
+
+!! test
+#regex with 'r' flag but no match should result into empty string instead of initial string in argument 1
+!! input
+"{{#regex:abc 20,30,40 | &foo&r | xx }}"
+!!result
+<p>""
+</p>
+!! end
+
+
+##
+## 'e' flag test
+##
+
+!! test
+Safety test 'e' flag. This should always be filtered for not running into its php meaning!
+!! input
+"{{#regex: text | /^.+
+
+$/xe
+ | $GLOBALS['wgDBuser'] }}"
+!!result
+<p>"$GLOBALS['wgDBuser']"
+</p>
+!! end
+
+
+
+!!article
+Template:parsertest.regexfun:11
+!!text
+ELEVEN{{{1|}}}
+!!endarticle
+
+!!article
+Template:parsertest.regexfun:12
+!!text
+TWELVE
+!!endarticle
+
+!! test
+'e' modifier and new feature in 1.1, transform parameter doesn't have to be escaped
+!! input
+"{{
+#regex: 11 and 12
+| /\d+/ier
+| {{parsertest.regexfun:$0|$0|<!--pipes should have no effect here-->|}}\$0
+}}"
+!!result
+<p>"ELEVEN11$0 and TWELVE$0"
+</p>
+!! end
+
+
+!! test
+'e' does not work to abuse #regex for parsing its input. Only replacement parameter's wikitext will be parsed, not the text within the backrefs.
+!! input
+"{{
+#regex: {{parsertest.regexfun:((}}parsertest.regexfun:11{{parsertest.regexfun:!}}_foo{{parsertest.regexfun:))}}
+| /$.+^/e
+| $0
+}}"
+!!result
+<p>"{{parsertest.regexfun:11|_foo}}"
+</p>
+!! end
+
+
+
+##
+## #regex_var
+##
+
+!! test
+#regex_var after #regex with replacement
+!! input
+"{{
+#regex:Numbers: 1, 2, 3, 4
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+),\s*(\d+)\s*$/r
+|
+}}{{
+#regex_var:1}},{{
+#regex_var:2|foo}},{{
+#regex_var:3|foo}},{{
+#regex_var:4|foo}},{{
+#regex_var:5}}"
+!!result
+<p>"1,2,3,4,"
+</p>
+!! end
+
+
+!! test
+Test without replacement in '#regex' before
+!! input
+"{{
+#regex: text
+| /(.+)/
+}}_{{
+#regex_var:0}}_{{
+#regex_var:1}}"
+!!result
+<p>"text_text_text"
+</p>
+!! end
+
+
+!! test
+#regex_var after #regex with 'e' flag
+!! input
+"{{
+#regex:Numbers: 10, 20, 30
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
+|
+}}{{
+#regex_var:1}},{{
+#regex_var:2|foo}},{{
+#regex_var:3|foo}},{{
+#regex_var:4|foo}},{{
+#regex_var:5}}"
+!!result
+<p>"10,20,30,foo,"
+</p>
+!! end
+
+
+!! test
+#regex_var again
+!! input
+"{{
+#regex:Numbers: 10, 20, 30
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
+|
+}}{{#regex_var:$1 + $2 = $3, right?}}"
+!!result
+<p>"10 + 20 = 30, right?"
+</p>
+!! end
+
+
+!! test
+#regex_var with old-style backrefs
+!! input
+"{{
+#regex:Numbers: 10, 20, 30
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
+|
+}}{{#regex_var:\1 + \2 = \3, right?}}"
+!!result
+<p>"10 + 20 = 30, right?"
+</p>
+!! end
+
+
+!! test
+#regex_var with $0
+!! input
+"{{
+#regex:Numbers: 10, 20, 30
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
+|
+}}{{#regex_var:'$0' or '\0'?}}"
+!!result
+<p>"'Numbers: 10, 20, 30' or 'Numbers: 10, 20, 30'?"
+</p>
+!! end
+
+
+!! test
+#regex_var after invalid regex. Without/with default value.
+!! input
+"{{
+#regex:Numbers: 10, 20, 30
+| /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
+|
+}}{{#if:{{#regex:}}}}{{
+#regex_var:$0}}{{
+#regex_var:_$0_}}", "{{#regex_var:$0|dflt1}}{{
+#regex_var:_$0_|dflt2}}"
+!!result
+<p>"", "dflt1dflt2"
+</p>
+!! end
+
+
+!!article
+Template:parsertest.regexfun:regex_var-scope
+!!text
+{{#regex: {{{1}}} | {{{2}}} }}
+!!endarticle
+
+!! test
+Test of var scope, using a regex, then template call with regex inside, then 'regex_var' to get first regex value. Works in 1.1+
+!! input
+"{{#regex: 123 | /(.+)/ }}",
+"{{parsertest.regexfun:regex_var-scope | ABC | /(.+)/ }}",
+"{{#regex_var:$1}}"
+!!result
+<p>"123",
+"ABC",
+"123"
+</p>
+!! end
+
+
+##
+## #regexall
+##
+
+!! test
+#regexall
+!! input
+"{{#regexall:100,200,300 | /\d+/ }}"
+!!result
+<p>"100, 200, 300"
+</p>
+!! end
+
+
+!! test
+#regexall, sep '#', offset '1'
+!! input
+"{{#regexall: 00,11,22,33 | /\d+/ | # | 1 }}"
+!!result
+<p>"11#22#33"
+</p>
+!! end
+
+
+!! test
+#regexall, sep empty, offset '1', limit '2'
+!! input
+"{{#regexall: 00,11,22,33 | /\d+/ | | 1 | 2 }}"
+!!result
+<p>"1122"
+</p>
+!! end
+
+
+##
+## #regexquote
+##
+
+!! test
+Input text escaped with #regexquote for use within regex, delimiter / by default
+!! input
+"{{#regexquote: \#;239"%&§$,:.?// }}"
+!!result
+<p>"\\#;239"%&amp;§\$,\:\.\?\/\/"
+</p>
+!! end
+
+
+!! test
+#regexquote parameter 2 test, delimiter '&'
+!! input
+"{{#regexquote: \#;239"%&§$,:.?// | & }}"
+!!result
+<p>"\\#;239"%\&amp;§\$,\:\.\?//"
+</p>
+!! end
+
+
+!! test
+#regexquote, wiki list character '#' as first one
+!! input
+"{{#regexquote: #text }}"
+!!result
+<p>"\x23text"
+</p>
+!! end
+
+
+!! test
+#regexquote, wiki list character ';' as first one
+!! input
+"{{#regexquote: ;text }}"
+!!result
+<p>"\x3btext"
+</p>
+!! end
+
+
+##
+## provoked errors, test with ParserFunction's #iferror
+##
+
+!! functionhooks
+iferror
+!! endfunctionhooks
+
+!! test
+#regex with #iferror, no delimiter
+!! input
+"{{#iferror: {{#regex:abc 20,30,40 }} | error | no-error }}"
+!!result
+<p>"error"
+</p>
+!! end
+
+
+!! test
+#regex with #iferror, invalid delimiter
+!! input
+"{{#iferror: {{#regex:abc 20,30,40 | \d+ }} | error | no-error }}"
+!!result
+<p>"error"
+</p>
+!! end
+
+
+##
+## together with 'arrays' extension
+##
+
+!! functionhooks
+arrayprint
+!! endfunctionhooks
+
+!! test
+Using Arrays, using 'Regex Fun' externally, checking whether '#regex_var' will still work as expected.
+!! input
+"{{
+#regex: abcd | /.+/ }}", "{{
+#arraydefine: b | 55555, 333, 4444, 1, 22, 999999999, 88888888, 4444 }}{{
+#arraysearcharray: b | b | /\d+/e | 0 | -1 | {{#len:$0}} }}{{
+#arrayprint: b }}", "{{
+#arrayindex: b | 0 }}", "{{
+#regex_var: $0 }}"
+!!result
+<p>"abcd", "5, 3, 4, 1, 2, 9, 8, 4", "5", "abcd"
+</p>
+!! end
+
+
+!! test
+Same as previous but with replace in '#regex'
+!! input
+"{{
+#regex: abcd | /(.+)/e | {{#len:$0}} }}", "{{
+#arraydefine: b | 55555, 333, 4444, 1, 22, 999999999, 88888888, 4444 }}{{
+#arraysearcharray: b | b | /\d+/e | 0 | -1 | {{#len:$0}} }}{{
+#arrayprint: b }}", "{{
+#arrayindex: b | 0 }}", "{{
+#regex_var: $0+$1 }}"
+!!result
+<p>"4", "5, 3, 4, 1, 2, 9, 8, 4", "5", "abcd+abcd"
+</p>
+!! end

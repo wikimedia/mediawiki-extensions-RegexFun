@@ -30,11 +30,3 @@ MediaWiki 'extensions' directory. Then add the following code to your
 
  # Regex Fun
  require_once( "$IP/extensions/RegexFun/RegexFun.php" );
- 
- 
-== Contributing ==
-
-If you have bug reports or requests, please add them to the ''Regex Fun'' Talk page [0].
-You can also send them to Daniel Werner < danweetz@web.de >
-
-[0] http://www.mediawiki.org/w/index.php?title=Extension_talk:Regex_Fun
