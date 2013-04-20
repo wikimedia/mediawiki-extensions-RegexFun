@@ -11,8 +11,9 @@
      template followed by a template call using '#regex' as well with '#regex_var after that template
 	 call will now access the variable from the '#regex' within the same page/template.
    - Changes in ExtRegexFun::doPregReplace(). Other extensions using this might have to adjust usage.
+   - Dropped compatibility with MediaWiki below 1.17
    - Added extensive parser tests.
- 
+
 
  * December 5, 2011 -- Version 1.0.2
    - Limit won't exceed early when 'e' flag with many backrefs in replacement is used extensivelly.

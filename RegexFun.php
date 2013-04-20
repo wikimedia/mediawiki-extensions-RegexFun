@@ -208,21 +208,46 @@ class ExtRegexFun {
 	/**
 	 * Returns a valid parser function output that the given pattern is not valid for a regular
 	 * expression. The message can be displayed in the wiki and is wrapped in an error-class span
-	 * which can be recognized by #iferror
+	 * which can be recognized by #iferror.
 	 * 
 	 * @param $pattern String the invalid regular expression
 	 * 
 	 * @return Array
 	 */
 	protected static function msgInvalidRegex( $pattern ) {
-		$msg = '<span class="error">' . wfMsgForContent( 'regexfun-invalid', "<tt><nowiki>$pattern</nowiki></tt>" ). '</span>';
-		return array( $msg, 'noparse' => false, 'isHTML' => false ); // 'noparse' true for <nowiki>, 'isHTML' false for #iferror!
+		return self::msgError(
+			'regexfun-invalid',
+			"<tt><nowiki>$pattern</nowiki></tt>"
+		);
 	}
 	
 	protected static function msgLimitExceeded() {
 		global $egRegexFunMaxRegexPerParse, $wgContLang;
-		$msg = '<span class="error">' . wfMsgForContent( 'regexfun-limit-exceed', $wgContLang->formatNum( $egRegexFunMaxRegexPerParse ) ) . '</span>';
-		return array( $msg, 'noparse' => true, 'isHTML' => false ); // 'isHTML' must be false for #iferror!
+		return self::msgError(
+			'regexfun-limit-exceed',
+			$wgContLang->formatNum( $egRegexFunMaxRegexPerParse )
+		);
+	}
+
+	/**
+	 * Returns a valid parser function output which will be recognized as an error by the #iferror
+	 * parser function.
+	 *
+	 * @param $message String The message key. Further arguments for message params.
+	 *
+	 * @return array
+	 */
+	protected static function msgError( $message /*, ...*/  ) {
+		$params = func_get_args();
+		array_shift( $params );
+
+		$msgHtml = HTML::rawElement( // don't escape content since this is not HTML but wikitext!
+			'span',
+			array( 'class' => 'error' ),
+			wfMessage( $message, $params )->inContentLanguage()->toString() // parser functions are mainly used in wikitext within wiki pages!
+		);
+		// 'noparse' true for <nowiki>, 'isHTML' false for #iferror!
+		return array( $msgHtml, 'noparse' => true, 'isHTML' => false );
 	}
 	
 	/**
@@ -597,7 +622,7 @@ class ExtRegexFun {
 	 * 
 	 * @return String Returns the quoted string
 	 */
-	public static function pf_regexquote( &$parser, $str = null, $delimiter = '/' ) {		
+	public static function pf_regexquote( &$parser, $str = null, $delimiter = '/' ) {
 		if( $str === null ) {
 			return '';
 		}		
