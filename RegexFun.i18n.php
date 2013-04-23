@@ -172,9 +172,9 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'regexfun-desc' => 'Bränk Funxjuhne en et Wiki, öm <i lang="en">regular expressions</i> en Wiki-Sigge bruche ze künne.',
-	'regexfun-invalid' => '„$1“ es kein jölteje <i lang="en">regular expression</i>.',
-	'regexfun-limit-exceed' => 'Et {{PLURAL:$1|es mieh wi eine Oproof|sinn_er mieh wi $1 Oproofe|es keine Oproof}} för <i lang="en">regular expressions</i> ze verärbeide en heh dä Sigg opjetrodde. Dat es ze vill.',
+	'regexfun-desc' => 'Bränk Funxjuhne en et Wiki, öm rejolähr Ußdrök en Wiki-Sigge bruche ze künne.',
+	'regexfun-invalid' => '„$1“ es kein jölteje rejolähre Ußdrok.',
+	'regexfun-limit-exceed' => 'Et {{PLURAL:$1|es mieh wi eine Oproof|sinn_er mieh wi $1 Oproofe|es keine Oproof}} för rejolähr Ußdrök ze verärbeide en heh dä Sigg opjetrodde. Dat es ze vill.',
 );
 
 /** Macedonian (македонски)
