@@ -195,7 +195,7 @@ $messages['ms'] = array(
 	'regexfun-limit-exceed' => 'Had maksimum $1 kendalian ungkapan nalar "Regex Fun" dicapai.',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Event
  */
 $messages['nb'] = array(
