@@ -128,6 +128,8 @@ class ExtRegexFun {
 
 		$specialFlags = array();
 
+		$pattern = str_replace(chr(0), '', $pattern);
+
 		if( strlen( $pattern ) < 2 ) {
 			return false;
 		}
