@@ -233,6 +233,15 @@ $messages['pms'] = array(
 	'regexfun-limit-exceed' => 'Rivà al màssim ëd {{PLURAL:$1|$1 gestor d\'espression regolar "Regex Fun"|$1 gestor d\'espression regolar "Regex Fun"}}.',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'regexfun-desc' => 'Adiciona funções sintáticas que permitem o uso de expressões regulares em páginas wiki',
+	'regexfun-invalid' => 'A expressão regular "$1" é inválida.',
+	'regexfun-limit-exceed' => 'Máximo de {{PLURAL:$1|$1 tratamento de expressão regular pela extensão "Regex Fun"|$1 tratamentos de expressões regulares pela extensão "Regex Fun"}} atingido.',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
