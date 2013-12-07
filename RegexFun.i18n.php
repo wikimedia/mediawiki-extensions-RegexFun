@@ -51,7 +51,7 @@ $messages['be-tarask'] = array(
 	'regexfun-limit-exceed' => 'Дасягнутае абмежаваньне ў $1 {{PLURAL:$1|выклік|выклікі|выклікаў}} функцыяў Regex Fun.',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Reaperman
  */
 $messages['cs'] = array(
