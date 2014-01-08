@@ -253,12 +253,13 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author Haffman
+ * @author Kaganer
  * @author Okras
  */
 $messages['ru'] = array(
 	'regexfun-desc' => 'Добавляет функции, позволяющие использовать регулярные выражения на вики-страницах',
 	'regexfun-invalid' => 'Регулярное выражение "$1" неверно.',
-	'regexfun-limit-exceed' => 'Достигнуто максимальное количество в {{PLURAL:$1|$1 обращение|$1 обращений|$1 обращения}} к регулярным выражениям «Regex Fun».', # Fuzzy
+	'regexfun-limit-exceed' => 'Достигнуто максимальное количество в {{PLURAL:$1|$1 обращение|$1 обращений|$1 обращения}} к регулярным выражениям «Regex Fun».',
 );
 
 /** Tagalog (Tagalog)
