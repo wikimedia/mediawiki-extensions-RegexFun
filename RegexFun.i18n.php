@@ -88,11 +88,13 @@ $messages['es'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'regexfun-desc' => 'توابع تجزیه‌کننده‌ای را می‌افزاید که قابلیت استفاده از عبارت‌های باقاعده را در صفحه‌های ویکی می‌دهد',
 	'regexfun-invalid' => 'عبارت باقاعدهٔ «$1» نامعتبر است',
+	'regexfun-limit-exceed' => 'حداکثر {{PLURAL:$1|$1 "رجکس فان" سرفصل عبارت منظم|$1 "رجکس فان" سرفصل‌های عبارت منظم}}  به دست آمد.',
 );
 
 /** French (français)
