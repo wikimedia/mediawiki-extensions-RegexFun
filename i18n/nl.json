@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Siebrand",
+            "Tjcool007"
+        ]
+    },
+    "regexfun-desc": "Voegt parserfuncties toe die mogelijk maken om reguliere expressies te gebruiken in wikipagina's",
+    "regexfun-invalid": "De reguliere expressie \"$1\" is ongeldig.",
+    "regexfun-limit-exceed": "Het maximale aantal van {{PLURAL:$1|$1|$1}} af te handelen reguliere expressies is bereikt."
+}

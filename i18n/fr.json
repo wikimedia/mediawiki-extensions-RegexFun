@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Gomoko"
+        ]
+    },
+    "regexfun-desc": "Ajoute les fonctions d'analyse permettant l'utilisation d'expressions régulières dans les pages du wiki",
+    "regexfun-invalid": "L'expression régulière \"$1\" n'est pas valide.",
+    "regexfun-limit-exceed": "Le nombre maximal de {{PLURAL:$1|$1 gestion d'expression régulière \"Regex Fun\"|$1 gestions d'expression régulière \"Regex Fun\"}} a été atteint."
+}

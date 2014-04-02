@@ -1,5 +1,4 @@
 <?php
-
 /**
  * 'Regex Fun' is a MediaWiki extension which adds parser functions for performing regular
  * expression searches and replacements.
@@ -7,7 +6,6 @@
  * Documentation: http://www.mediawiki.org/wiki/Extension:Regex_Fun
  * Support:       http://www.mediawiki.org/wiki/Extension_talk:Regex_Fun
  *
- * @version: 1.1
  * @license: ISC license
  * @author:  Daniel Werner < danweetz@web.de >
  *
@@ -16,7 +14,6 @@
  */
 
 if ( ! defined( 'MEDIAWIKI' ) ) { die( ); }
-
 
 /**** extension info ****/
 
@@ -30,6 +27,7 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 // language files:
+$wgMessagesDirs['RegexFun'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['RegexFun'     ] = ExtRegexFun::getDir() . '/RegexFun.i18n.php';
 $wgExtensionMessagesFiles['RegexFunMagic'] = ExtRegexFun::getDir() . '/RegexFun.i18n.magic.php';
 
@@ -50,7 +48,6 @@ $wgParserTestFiles[] = ExtRegexFun::getDir() . '/regexfunParserTests.txt';
  * @since 1.0
  */
 class ExtRegexFun {
-
 	/**
 	 * Version of the 'RegexFun' extension.
 	 *
@@ -58,7 +55,7 @@ class ExtRegexFun {
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.1';
+	const VERSION = '1.2.0';
 
 	/**
 	 * Sets up parser functions
