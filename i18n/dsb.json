@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "regexfun-desc": "Pśidawa parserowe funkcije, kótarež dowóluju wužywanje regularnych wurazow na wikibokach",
-    "regexfun-invalid": "Regularny wuraz \"$1\" jo njepłaśiwy.",
-    "regexfun-limit-exceed": "Maksimalna licba {{PLURAL:$1|$1 pśez \"Regex Fun\" wobźěłanego regularnego wuraza|$1 pśez \"Regex Fun\" wobźěłaneju regularneju wurazowu|$1 pśez \"Regex Fun\" wobźěłanych regularnych wurazow|$1 pśez \"Regex Fun\" wobźěłanych regularnych wurazow}} jo dojśpjona."
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"regexfun-desc": "Pśidawa parserowe funkcije, kótarež dowóluju wužywanje regularnych wurazow na wikibokach",
+	"regexfun-invalid": "Regularny wuraz \"$1\" jo njepłaśiwy.",
+	"regexfun-limit-exceed": "Maksimalna licba {{PLURAL:$1|$1 pśez \"Regex Fun\" wobźěłanego regularnego wuraza|$1 pśez \"Regex Fun\" wobźěłaneju regularneju wurazowu|$1 pśez \"Regex Fun\" wobźěłanych regularnych wurazow|$1 pśez \"Regex Fun\" wobźěłanych regularnych wurazow}} jo dojśpjona."
 }

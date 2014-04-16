@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Daniel Werner",
-            "Shirayuki"
-        ]
-    },
-    "regexfun-desc": "{{desc|name=Regex Fun|url=http://www.mediawiki.org/wiki/Extension:Regex_Fun}}",
-    "regexfun-invalid": "Used as error message. Parameters:\n* $1 - invalid regular expression",
-    "regexfun-limit-exceed": "Used as error message. Parameters:\n* $1 - the in <code>LocalSettings.php</code> defined limit of total Regex Fun function calls (per parser process) dealing with regular expressions"
+	"@metadata": {
+		"authors": [
+			"Daniel Werner",
+			"Shirayuki"
+		]
+	},
+	"regexfun-desc": "{{desc|name=Regex Fun|url=http://www.mediawiki.org/wiki/Extension:Regex_Fun}}",
+	"regexfun-invalid": "Used as error message. Parameters:\n* $1 - invalid regular expression",
+	"regexfun-limit-exceed": "Used as error message. Parameters:\n* $1 - the in <code>LocalSettings.php</code> defined limit of total Regex Fun function calls (per parser process) dealing with regular expressions"
 }

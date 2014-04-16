@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Reaperman"
-        ]
-    },
-    "regexfun-desc": "Přidává funkce parseru, které umožňují používat regulární výrazy na stránkách wiki",
-    "regexfun-invalid": "Regulární výraz „$1“ je neplatný."
+	"@metadata": {
+		"authors": [
+			"Reaperman"
+		]
+	},
+	"regexfun-desc": "Přidává funkce parseru, které umožňují používat regulární výrazy na stránkách wiki",
+	"regexfun-invalid": "Regulární výraz „$1“ je neplatný."
 }

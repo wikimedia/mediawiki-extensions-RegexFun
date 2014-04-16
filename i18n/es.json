@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Armando-Martin"
-        ]
-    },
-    "regexfun-desc": "Añade funciones del analizador (parser) que permiten el uso de expresiones regulares en las páginas wiki",
-    "regexfun-invalid": "La expresión regular \"$1\" no es válida.",
-    "regexfun-limit-exceed": "Se ha alcanzado el número máximo {{PLURAL:$1|de una manipulación de expresión regular \"Regex Fun\"|de $1 manipulaciones de expresiones regulares \"Regex Fun\"}}."
+	"@metadata": {
+		"authors": [
+			"Armando-Martin"
+		]
+	},
+	"regexfun-desc": "Añade funciones del analizador (parser) que permiten el uso de expresiones regulares en las páginas wiki",
+	"regexfun-invalid": "La expresión regular \"$1\" no es válida.",
+	"regexfun-limit-exceed": "Se ha alcanzado el número máximo {{PLURAL:$1|de una manipulación de expresión regular \"Regex Fun\"|de $1 manipulaciones de expresiones regulares \"Regex Fun\"}}."
 }

@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Yfdyh000"
-        ]
-    },
-    "regexfun-desc": "增加解析器函数，允许在wiki页面里使用正则表达式",
-    "regexfun-invalid": "正则表达式“$1”无效。",
-    "regexfun-limit-exceed": "正则表达式超过“Regex Fun”的最大值限制$1。"
+	"@metadata": {
+		"authors": [
+			"Yfdyh000"
+		]
+	},
+	"regexfun-desc": "增加解析器函数，允许在wiki页面里使用正则表达式",
+	"regexfun-invalid": "正则表达式“$1”无效。",
+	"regexfun-limit-exceed": "正则表达式超过“Regex Fun”的最大值限制$1。"
 }

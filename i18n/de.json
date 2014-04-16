@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Daniel Werner",
-            "Kghbln"
-        ]
-    },
-    "regexfun-desc": "Ergänzt Parserfunktionen, die die Verwendung regulärer Ausdrücke auf Wikiseiten ermöglichen",
-    "regexfun-invalid": "„$1“ ist kein gültiger regulärer Ausdruck.",
-    "regexfun-limit-exceed": "Die maximale Anzahl von {{PLURAL:$1|einem verarbeitbaren regulären Ausdruck|$1 verarbeitbaren regulären Ausdrücken}} ist erreicht."
+	"@metadata": {
+		"authors": [
+			"Daniel Werner",
+			"Kghbln"
+		]
+	},
+	"regexfun-desc": "Ergänzt Parserfunktionen, die die Verwendung regulärer Ausdrücke auf Wikiseiten ermöglichen",
+	"regexfun-invalid": "„$1“ ist kein gültiger regulärer Ausdruck.",
+	"regexfun-limit-exceed": "Die maximale Anzahl von {{PLURAL:$1|einem verarbeitbaren regulären Ausdruck|$1 verarbeitbaren regulären Ausdrücken}} ist erreicht."
 }
