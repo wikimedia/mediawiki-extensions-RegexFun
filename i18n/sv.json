@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lokal Profil"
+		]
+	},
+	"regexfun-invalid": "Det reguljära uttrycket \"$1\" är ogiltigt."
+}
