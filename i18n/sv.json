@@ -4,5 +4,7 @@
 			"Lokal Profil"
 		]
 	},
-	"regexfun-invalid": "Det reguljära uttrycket \"$1\" är ogiltigt."
+	"regexfun-desc": "Lägger till tolkfunktioner som tillåter användning av reguljära uttryck på wikisidor",
+	"regexfun-invalid": "Det reguljära uttrycket \"$1\" är ogiltigt.",
+	"regexfun-limit-exceed": "Maximalt antal {{PLURAL:$1|$1 hantering av \"Regex Fun\"-reguljära uttryck|$1 hanteringar av \"Regex Fun\"-reguljära uttryck}} har nått."
 }
