@@ -61,8 +61,8 @@ class ExtRegexFun {
 	 * Sets up parser functions
 	 */
 	public static function init( Parser &$parser ) {
-		self::initFunction( $parser, 'regex', SFH_OBJECT_ARGS );
-		self::initFunction( $parser, 'regex_var', SFH_OBJECT_ARGS );
+		self::initFunction( $parser, 'regex', Parser::SFH_OBJECT_ARGS );
+		self::initFunction( $parser, 'regex_var', Parser::SFH_OBJECT_ARGS );
 		self::initFunction( $parser, 'regexquote' );
 		self::initFunction( $parser, 'regexall' );
 
@@ -74,7 +74,7 @@ class ExtRegexFun {
 		// only register function if not disabled by configuration
 		if( ! in_array( $name, $egRegexFunDisabledFunctions ) ) {
 			// all parser functions with prefix:
-			$prefix = ( $flags & SFH_OBJECT_ARGS ) ? 'pfObj_' : 'pf_';
+			$prefix = ( $flags & Parser::SFH_OBJECT_ARGS ) ? 'pfObj_' : 'pf_';
 			$functionCallback = array( __CLASS__, $prefix . $name );
 			$parser->setFunctionHook( $name, $functionCallback, $flags );
 		}
