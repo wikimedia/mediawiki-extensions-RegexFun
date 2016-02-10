@@ -240,7 +240,7 @@ class ExtRegexFun {
 		$params = func_get_args();
 		array_shift( $params );
 
-		$msgHtml = HTML::rawElement( // don't escape content since this is not HTML but wikitext!
+		$msgHtml = Html::rawElement( // don't escape content since this is not HTML but wikitext!
 			'span',
 			array( 'class' => 'error' ),
 			wfMessage( $message, $params )->inContentLanguage()->toString() // parser functions are mainly used in wikitext within wiki pages!
