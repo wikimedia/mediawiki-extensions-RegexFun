@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Giromin Cangiaxo"
+		]
+	},
+	"regexfun-desc": "A l'azonze de fonçioin parser che permettan l'uso d'esprescioin regolare inte paggine wiki",
+	"regexfun-invalid": "L'esprescion regolâ \"$1\" a no l'è vallida.",
+	"regexfun-limit-exceed": "Razonto o mascimo de {{PLURAL:$1|$1 manezzo d'esprescion regolâ \"Regex Fun\" |$1 manezzi d'esprescion regolâ \"Regex Fun\"}}"
+}
