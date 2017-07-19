@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"regexfun-desc": "Acrescenta funções ao analisador sintático que permitem o uso de expressões regulares nas páginas da wiki",
+	"regexfun-invalid": "A expressão regular \"$1\" é inválida.",
+	"regexfun-limit-exceed": "O número máximo de {{PLURAL:$1|$1 tratamento de expressão regular pela extensão \"Regex Fun\"|$1 tratamentos de expressões regulares pela extensão \"Regex Fun\"}} foi atingido."
+}
