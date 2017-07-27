@@ -3,8 +3,9 @@
  * 'Regex Fun' is a MediaWiki extension which adds parser functions for performing regular
  * expression searches and replacements.
  *
- * Documentation: http://www.mediawiki.org/wiki/Extension:Regex_Fun
- * Support:       http://www.mediawiki.org/wiki/Extension_talk:Regex_Fun
+ * Documentation: https://www.mediawiki.org/wiki/Extension:Regex_Fun
+ * Support:       https://www.mediawiki.org/wiki/Extension_talk:Regex_Fun
+ * Source code:   https://phabricator.wikimedia.org/diffusion/ERXU/
  *
  * @license: ISC license
  * @author:  Daniel Werner < danweetz@web.de >
@@ -13,22 +14,27 @@
  * @ingroup RegexFun
  */
 
-if ( ! defined( 'MEDIAWIKI' ) ) { die( ); }
+// entry point:
+if ( !defined( 'MEDIAWIKI' ) ) {
+    die( 'This is an extension to MediaWiki and cannot be run standalone.' );
+}
 
-/**** extension info ****/
-
+// extension info:
 $wgExtensionCredits['parserhook'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'Regex Fun',
+	'path' => __FILE__,
+	'name' => 'Regex Fun',
 	'descriptionmsg' => 'regexfun-desc',
-	'version'        => ExtRegexFun::VERSION,
-	'author'         => '[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]',
-	'url'            => 'https://www.mediawiki.org/wiki/Extension:Regex_Fun',
+	'version' => ExtRegexFun::VERSION,
+	'author' => array(
+		'[https://www.mediawiki.org/wiki/User:Danwe Daniel Werner]',
+		'...'
+	),
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Regex_Fun',
+	'license-name' => 'ISC'
 );
 
 // language files:
 $wgMessagesDirs['RegexFun'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['RegexFun'     ] = ExtRegexFun::getDir() . '/RegexFun.i18n.php';
 $wgExtensionMessagesFiles['RegexFunMagic'] = ExtRegexFun::getDir() . '/RegexFun.i18n.magic.php';
 
 // hooks registration:
@@ -55,7 +61,7 @@ class ExtRegexFun {
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.2.0';
+	const VERSION = '1.3.0';
 
 	/**
 	 * Sets up parser functions

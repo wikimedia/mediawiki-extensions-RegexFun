@@ -1,7 +1,20 @@
  Changelog:
  ==========
 
- * (git HEAD) -- Version 1.1
+ * July 27, 2017 -- Version 1.3.0
+   - Removes i18n shim for php
+   - Provides license label
+   - Extends author's array
+   - Use Parser::SFH_OBJECT_ARGS class const instead of the global const
+   - Fixes case of Html class since it gave a fatal when using $wgAutoloadAttemptLowercase = false
+   - Dropped compatibility with MediaWiki below 1.23
+
+ * April 2, 2014 -- Version 1.2.0
+   - Migrated I18n to json files
+
+ * August 12, 2013 -- Version 1.1.0
+   - Fixed a security issue
+   - Migrated to using Message class now
    - '#regex' in replace mode with 'e' flag doesn't require escaped replacement string anymore.
      Instead of something like "{{((}}#if:$2{{!}}$2{{!}}$1{{))}}", "{{#if:$2|$2|$1}}" can be used.
    - '#regex' with 'e' flag now first escapes matches before putting them into the back-references
