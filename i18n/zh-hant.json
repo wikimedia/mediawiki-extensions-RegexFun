@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kly"
 		]
 	},
-	"regexfun-desc": "加入解析函數以允許經由wiki頁面使用正則運算式"
+	"regexfun-desc": "加入解析函數以允許經由 wiki 頁面使用正規表達式",
+	"regexfun-invalid": "正規表達式「$1」無效。",
+	"regexfun-limit-exceed": "已達到{{PLURAL:$1|正規表達式「Regex Fun」的最大處理上限：$1|正規表達式「Regex Fun」的最大處理上限：$1}}。"
 }
