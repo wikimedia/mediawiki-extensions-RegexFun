@@ -46,7 +46,7 @@ $wgHooks['ParserLimitReport'  ][] = 'ExtRegexFun::onParserLimitReport';
 require_once ExtRegexFun::getDir() . '/RegexFun_Settings.php';
 
 // parser tests registration:
-$wgParserTestFiles[] = ExtRegexFun::getDir() . '/regexfunParserTests.txt';
+$wgParserTestFiles[] = ExtRegexFun::getDir() . '/tests/parser/regexfunParserTests.txt';
 
 /**
  * Extension class with all the regex functions functionality
