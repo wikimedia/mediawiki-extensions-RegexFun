@@ -180,9 +180,9 @@ class ExtRegexFun {
 		 * This takes care of all invalid regular expression use and the ugly php notices
 		 * which some other regex extensions for MW won't handle right.
 		 */
-		wfSuppressWarnings(); // instead of using the evil @ operator!
+		Wikimedia\suppressWarnings(); // instead of using the evil @ operator!
 		$isValid = false !== preg_match( $pattern, ' ' ); // preg_match returns false on error
-		wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 
 		return $isValid;
 	}
