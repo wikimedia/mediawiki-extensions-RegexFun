@@ -17,7 +17,7 @@ with it. 'RegexParserFunctions' simply is outdated and lacks some advanced funct
                   notation e.g. '\x23' instead of '#'. This will prevent from things going terribly wrong when using
                   user input within a regular expression.
 
-* Website: http://www.mediawiki.org/wiki/Extension:Regex_Fun
+* Website: https://www.mediawiki.org/wiki/Extension:Regex_Fun
 * License: ISC license
 * Author:  Daniel Werner < danweetz@web.de >
 

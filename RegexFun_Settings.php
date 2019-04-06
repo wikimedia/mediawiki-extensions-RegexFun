@@ -2,7 +2,7 @@
 
 /**
  * File defining the settings for the 'Regex Fun' extension.
- * More info can be found at http://www.mediawiki.org/wiki/Extension:Regex_Fun#Configuration
+ * More info can be found at https://www.mediawiki.org/wiki/Extension:Regex_Fun#Configuration
  *
  * NOTICE:
  * =======
