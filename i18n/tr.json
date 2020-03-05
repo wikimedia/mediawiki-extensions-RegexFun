@@ -4,7 +4,7 @@
 			"BaRaN6161 TURK"
 		]
 	},
-	"regexfun-desc": "Wiki sayfalarında normal ifadelerin kullanılmasına izin veren ayrıştırıcı işlevler ekler",
+	"regexfun-desc": "Viki sayfalarında normal ifadelerin kullanılmasına izin veren ayrıştırıcı işlevler ekler",
 	"regexfun-invalid": "\"$1\" normal ifadesi geçersiz.",
 	"regexfun-limit-exceed": "{{PLURAL:$1|$1 \"Regex Fun\" normal ifade işleme |$1 \"Regex Fun\" normal ifade işleme}} ulaşıldı."
 }
