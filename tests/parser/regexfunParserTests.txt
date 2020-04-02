@@ -1,3 +1,4 @@
+!! Version 2
 # MediaWiki 'Regex Fun' extension Parser test cases
 # @Author: Daniel Werner < danweetz@web.de >
 # @since 1.1
@@ -10,23 +11,23 @@ regex
 # since template:! is needed by other tests, but creating it twice will fail but not having it at all when
 # running these tests only fill fail as well, we use the 'parsertest.regexfun' prefix to avoid duplicates.
 
-!!article
+!! article
 Template:parsertest.regexfun:!
 !!text
 |
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Template:parsertest.regexfun:((
 !!text
 {{
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Template:parsertest.regexfun:))
 !!text
 }}
-!!endarticle
+!! endarticle
 
 ##
 ## #regex
@@ -34,9 +35,9 @@ Template:parsertest.regexfun:))
 
 !! test
 Simple regular expression #regex
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | /\d+/ }}"
-!!result
+!! html
 <p>"20"
 </p>
 !! end
@@ -44,9 +45,9 @@ Simple regular expression #regex
 
 !! test
 Simple replacement with #regex
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | %\d% | # }}"
-!!result
+!! html
 <p>"abc ##,##,##"
 </p>
 !! end
@@ -54,9 +55,9 @@ Simple replacement with #regex
 
 !! test
 Replace something with empty string
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | %\d% | }}"
-!!result
+!! html
 <p>"abc ,,"
 </p>
 !! end
@@ -64,9 +65,9 @@ Replace something with empty string
 
 !! test
 Nothing to replace
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | !foo! | xx }}"
-!!result
+!! html
 <p>"abc 20,30,40"
 </p>
 !! end
@@ -74,9 +75,9 @@ Nothing to replace
 
 !! test
 'i' flag test
-!! input
+!! wikitext
 "{{#regex:TeSt | /test/i }}"
-!!result
+!! html
 <p>"TeSt"
 </p>
 !! end
@@ -84,9 +85,9 @@ Nothing to replace
 
 !! test
 Safety test, script tag injection
-!! input
+!! wikitext
 "{{#regex:<script>alert("foo")</script>| /.+/ }}"
-!!result
+!! html
 <p>"&lt;script&gt;alert("foo")&lt;/script&gt;"
 </p>
 !! end
@@ -94,9 +95,9 @@ Safety test, script tag injection
 
 !! test
 Special chars
-!! input
+!! wikitext
 "{{#regex: foo{{parsertest.regexfun:!}}oo | /(o.o)/ | $1 }}", "{{#regex_var: $1 }}"
-!!result
+!! html
 <p>"foo|oo", "o|o"
 </p>
 !! end
@@ -108,9 +109,9 @@ Special chars
 
 !! test
 #regex test with 'r' flag where it should have no effect
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | /\d+/r }}"
-!!result
+!! html
 <p>"20"
 </p>
 !! end
@@ -118,9 +119,9 @@ Special chars
 
 !! test
 #regex with 'r' flag but no match should result into empty string instead of initial string in argument 1
-!! input
+!! wikitext
 "{{#regex:abc 20,30,40 | &foo&r | xx }}"
-!!result
+!! html
 <p>""
 </p>
 !! end
@@ -132,39 +133,39 @@ Special chars
 
 !! test
 Safety test 'e' flag. This should always be filtered for not running into its php meaning!
-!! input
+!! wikitext
 "{{#regex: text | /^.+
 
 $/xe
  | $GLOBALS['wgDBuser'] }}"
-!!result
+!! html
 <p>"$GLOBALS['wgDBuser']"
 </p>
 !! end
 
 
 
-!!article
+!! article
 Template:parsertest.regexfun:11
 !!text
 ELEVEN{{{1|}}}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Template:parsertest.regexfun:12
 !!text
 TWELVE
-!!endarticle
+!! endarticle
 
 !! test
 'e' modifier and new feature in 1.1, transform parameter doesn't have to be escaped
-!! input
+!! wikitext
 "{{
 #regex: 11 and 12
 | /\d+/ier
 | {{parsertest.regexfun:$0|$0|<!--pipes should have no effect here-->|}}\$0
 }}"
-!!result
+!! html
 <p>"ELEVEN11$0 and TWELVE$0"
 </p>
 !! end
@@ -172,13 +173,13 @@ TWELVE
 
 !! test
 'e' does not work to abuse #regex for parsing its input. Only replacement parameter's wikitext will be parsed, not the text within the backrefs.
-!! input
+!! wikitext
 "{{
 #regex: {{parsertest.regexfun:((}}parsertest.regexfun:11{{parsertest.regexfun:!}}_foo{{parsertest.regexfun:))}}
 | /$.+^/e
 | $0
 }}"
-!!result
+!! html
 <p>"{{parsertest.regexfun:11|_foo}}"
 </p>
 !! end
@@ -191,7 +192,7 @@ TWELVE
 
 !! test
 #regex_var after #regex with replacement
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 1, 2, 3, 4
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+),\s*(\d+)\s*$/r
@@ -202,7 +203,7 @@ TWELVE
 #regex_var:3|foo}},{{
 #regex_var:4|foo}},{{
 #regex_var:5}}"
-!!result
+!! html
 <p>"1,2,3,4,"
 </p>
 !! end
@@ -210,14 +211,14 @@ TWELVE
 
 !! test
 Test without replacement in '#regex' before
-!! input
+!! wikitext
 "{{
 #regex: text
 | /(.+)/
 }}_{{
 #regex_var:0}}_{{
 #regex_var:1}}"
-!!result
+!! html
 <p>"text_text_text"
 </p>
 !! end
@@ -225,7 +226,7 @@ Test without replacement in '#regex' before
 
 !! test
 #regex_var after #regex with 'e' flag
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 10, 20, 30
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
@@ -236,7 +237,7 @@ Test without replacement in '#regex' before
 #regex_var:3|foo}},{{
 #regex_var:4|foo}},{{
 #regex_var:5}}"
-!!result
+!! html
 <p>"10,20,30,foo,"
 </p>
 !! end
@@ -244,13 +245,13 @@ Test without replacement in '#regex' before
 
 !! test
 #regex_var again
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 10, 20, 30
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
 |
 }}{{#regex_var:$1 + $2 = $3, right?}}"
-!!result
+!! html
 <p>"10 + 20 = 30, right?"
 </p>
 !! end
@@ -258,13 +259,13 @@ Test without replacement in '#regex' before
 
 !! test
 #regex_var with old-style backrefs
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 10, 20, 30
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
 |
 }}{{#regex_var:\1 + \2 = \3, right?}}"
-!!result
+!! html
 <p>"10 + 20 = 30, right?"
 </p>
 !! end
@@ -272,13 +273,13 @@ Test without replacement in '#regex' before
 
 !! test
 #regex_var with $0
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 10, 20, 30
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
 |
 }}{{#regex_var:'$0' or '\0'?}}"
-!!result
+!! html
 <p>"'Numbers: 10, 20, 30' or 'Numbers: 10, 20, 30'?"
 </p>
 !! end
@@ -286,7 +287,7 @@ Test without replacement in '#regex' before
 
 !! test
 #regex_var after invalid regex. Without/with default value.
-!! input
+!! wikitext
 "{{
 #regex:Numbers: 10, 20, 30
 | /^\s*.+:\s*(\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\s*$/e
@@ -295,25 +296,25 @@ Test without replacement in '#regex' before
 #regex_var:$0}}{{
 #regex_var:_$0_}}", "{{#regex_var:$0|dflt1}}{{
 #regex_var:_$0_|dflt2}}"
-!!result
+!! html
 <p>"", "dflt1dflt2"
 </p>
 !! end
 
 
-!!article
+!! article
 Template:parsertest.regexfun:regex_var-scope
 !!text
 {{#regex: {{{1}}} | {{{2}}} }}
-!!endarticle
+!! endarticle
 
 !! test
 Test of var scope, using a regex, then template call with regex inside, then 'regex_var' to get first regex value. Works in 1.1+
-!! input
+!! wikitext
 "{{#regex: 123 | /(.+)/ }}",
 "{{parsertest.regexfun:regex_var-scope | ABC | /(.+)/ }}",
 "{{#regex_var:$1}}"
-!!result
+!! html
 <p>"123",
 "ABC",
 "123"
@@ -327,9 +328,9 @@ Test of var scope, using a regex, then template call with regex inside, then 're
 
 !! test
 #regexall
-!! input
+!! wikitext
 "{{#regexall:100,200,300 | /\d+/ }}"
-!!result
+!! html
 <p>"100, 200, 300"
 </p>
 !! end
@@ -337,9 +338,9 @@ Test of var scope, using a regex, then template call with regex inside, then 're
 
 !! test
 #regexall, sep '#', offset '1'
-!! input
+!! wikitext
 "{{#regexall: 00,11,22,33 | /\d+/ | # | 1 }}"
-!!result
+!! html
 <p>"11#22#33"
 </p>
 !! end
@@ -347,9 +348,9 @@ Test of var scope, using a regex, then template call with regex inside, then 're
 
 !! test
 #regexall, sep empty, offset '1', limit '2'
-!! input
+!! wikitext
 "{{#regexall: 00,11,22,33 | /\d+/ | | 1 | 2 }}"
-!!result
+!! html
 <p>"1122"
 </p>
 !! end
@@ -361,9 +362,9 @@ Test of var scope, using a regex, then template call with regex inside, then 're
 
 !! test
 Input text escaped with #regexquote for use within regex, delimiter / by default
-!! input
+!! wikitext
 "{{#regexquote: \#;239"%&§$,:.?// }}"
-!!result
+!! html
 <p>"\\#;239"%&amp;§\$,\:\.\?\/\/"
 </p>
 !! end
@@ -371,9 +372,9 @@ Input text escaped with #regexquote for use within regex, delimiter / by default
 
 !! test
 #regexquote parameter 2 test, delimiter '&'
-!! input
+!! wikitext
 "{{#regexquote: \#;239"%&§$,:.?// | & }}"
-!!result
+!! html
 <p>"\\#;239"%\&amp;§\$,\:\.\?//"
 </p>
 !! end
@@ -381,9 +382,9 @@ Input text escaped with #regexquote for use within regex, delimiter / by default
 
 !! test
 #regexquote, wiki list character '#' as first one
-!! input
+!! wikitext
 "{{#regexquote: #text }}"
-!!result
+!! html
 <p>"\x23text"
 </p>
 !! end
@@ -391,9 +392,9 @@ Input text escaped with #regexquote for use within regex, delimiter / by default
 
 !! test
 #regexquote, wiki list character ';' as first one
-!! input
+!! wikitext
 "{{#regexquote: ;text }}"
-!!result
+!! html
 <p>"\x3btext"
 </p>
 !! end
@@ -409,9 +410,9 @@ iferror
 
 !! test
 #regex with #iferror, no delimiter
-!! input
+!! wikitext
 "{{#iferror: {{#regex:abc 20,30,40 }} | error | no-error }}"
-!!result
+!! html
 <p>"error"
 </p>
 !! end
@@ -419,9 +420,9 @@ iferror
 
 !! test
 #regex with #iferror, invalid delimiter
-!! input
+!! wikitext
 "{{#iferror: {{#regex:abc 20,30,40 | \d+ }} | error | no-error }}"
-!!result
+!! html
 <p>"error"
 </p>
 !! end
@@ -438,7 +439,7 @@ len
 
 !! test
 Using Arrays, using 'Regex Fun' externally, checking whether '#regex_var' will still work as expected.
-!! input
+!! wikitext
 "{{
 #regex: abcd | /.+/ }}", "{{
 #arraydefine: b | 55555, 333, 4444, 1, 22, 999999999, 88888888, 4444 }}{{
@@ -446,7 +447,7 @@ Using Arrays, using 'Regex Fun' externally, checking whether '#regex_var' will s
 #arrayprint: b }}", "{{
 #arrayindex: b | 0 }}", "{{
 #regex_var: $0 }}"
-!!result
+!! html
 <p>"abcd", "5, 3, 4, 1, 2, 9, 8, 4", "5", "abcd"
 </p>
 !! end
@@ -454,7 +455,7 @@ Using Arrays, using 'Regex Fun' externally, checking whether '#regex_var' will s
 
 !! test
 Same as previous but with replace in '#regex'
-!! input
+!! wikitext
 "{{
 #regex: abcd | /(.+)/e | {{#len:$0}} }}", "{{
 #arraydefine: b | 55555, 333, 4444, 1, 22, 999999999, 88888888, 4444 }}{{
@@ -462,7 +463,7 @@ Same as previous but with replace in '#regex'
 #arrayprint: b }}", "{{
 #arrayindex: b | 0 }}", "{{
 #regex_var: $0+$1 }}"
-!!result
+!! html
 <p>"4", "5, 3, 4, 1, 2, 9, 8, 4", "5", "abcd+abcd"
 </p>
 !! end
