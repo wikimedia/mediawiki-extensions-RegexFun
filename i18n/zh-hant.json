@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"Liuxinyu970226"
 		]
 	},
 	"regexfun-desc": "加入解析函數以允許經由 wiki 頁面使用正規表達式",
