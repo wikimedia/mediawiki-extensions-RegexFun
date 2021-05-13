@@ -227,10 +227,10 @@ class ExtRegexFun {
 	}
 
 	protected static function msgLimitExceeded() {
-		global $egRegexFunMaxRegexPerParse, $wgContLang;
+		global $egRegexFunMaxRegexPerParse;
 		return self::msgError(
 			'regexfun-limit-exceed',
-			$wgContLang->formatNum( $egRegexFunMaxRegexPerParse )
+			\MediaWiki\MediaWikiServices::getInstance()->getContentLanguage()->formatNum( $egRegexFunMaxRegexPerParse )
 		);
 	}
 
