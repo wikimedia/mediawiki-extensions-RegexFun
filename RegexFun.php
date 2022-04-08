@@ -48,6 +48,8 @@ require_once ExtRegexFun::getDir() . '/RegexFun_Settings.php';
 // parser tests registration:
 $wgParserTestFiles[] = ExtRegexFun::getDir() . '/tests/parser/regexfunParserTests.txt';
 
+use Wikimedia\AtEase\AtEase;
+
 /**
  * Extension class with all the regex functions functionality
  *
@@ -180,9 +182,9 @@ class ExtRegexFun {
 		 * This takes care of all invalid regular expression use and the ugly php notices
 		 * which some other regex extensions for MW won't handle right.
 		 */
-		Wikimedia\suppressWarnings(); // instead of using the evil @ operator!
+		AtEase::suppressWarnings(); // instead of using the evil @ operator!
 		$isValid = false !== preg_match( $pattern, ' ' ); // preg_match returns false on error
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		return $isValid;
 	}
