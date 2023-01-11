@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"regexfun-desc": "Doda funkcije razčlenjevalnika, ki omogočajo uporabo regularnih izrazov v viki straneh",
+	"regexfun-invalid": "Regularni izraz »$1« je neveljaven.",
+	"regexfun-limit-exceed": "Dosežena meja {{PLURAL:$1|$1 obravnave regularnega izraza|$1 obravnav regularnih izrazov}} »Regex Fun«."
+}
