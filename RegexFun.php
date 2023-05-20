@@ -203,15 +203,6 @@ class ExtRegexFun {
 		return false;
 	}
 
-	private static function limitHandler( Parser &$parser ) {
-		// is the limit exceeded for this parsers parse() process?
-		if( self::limitExceeded( $parser ) ) {
-			return false;
-		}
-		self::increaseRegexCount( $parser );
-		return true;
-	}
-
 	/**
 	 * Returns a valid parser function output that the given pattern is not valid for a regular
 	 * expression. The message can be displayed in the wiki and is wrapped in an error-class span
@@ -719,14 +710,7 @@ class ExtRegexFun {
 	}
 
 	public static function onParserClearState( &$parser ) {
-		//cleanup to avoid conflicts with job queue or Special:Import
-		/*
-		$parser->mExtRegexFun = array();
-		self::setLastMatches( $parser, null );
-		self::setLastPattern( $parser, '' );
-		self::setLastSubject( $parser, '' );
-		*/
-		$parser->mExtRegexFun['counter'] = 0;
+		$parser->mExtRegexFun = [ 'counter' => 0 ];
 
 		return true;
 	}
@@ -741,7 +725,7 @@ class ExtRegexFun {
 		global $egRegexFunMaxRegexPerParse;
 		return (
 			$egRegexFunMaxRegexPerParse !== -1
-			&& $parser->mExtRegexFun['counter'] >= $egRegexFunMaxRegexPerParse
+			&& ( $parser->mExtRegexFun['counter'] ?? 0 ) >= $egRegexFunMaxRegexPerParse
 		);
 	}
 
@@ -753,6 +737,9 @@ class ExtRegexFun {
 	}
 
 	private static function increaseRegexCount( Parser &$parser ) {
+		if ( !isset( $parser->mExtRegexFun['counter'] ) ) {
+			$parser->mExtRegexFun = [ 'counter' => 0 ];
+		}
 		$parser->mExtRegexFun['counter']++;
 	}
 
