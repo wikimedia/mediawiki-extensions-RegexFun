@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Urhixidur"
+			"Urhixidur",
+			"Verdy p"
 		]
 	},
-	"regexfun-desc": "Ajoute les fonctions d’analyse permettant l’utilisation d’expressions rationnelles dans les pages du wiki",
-	"regexfun-invalid": "L’expression rationnelle « $1 » n’est pas valide.",
+	"regexfun-desc": "Ajoute des fonctions d’analyse permettant l’utilisation d’expressions rationnelles dans les pages du wiki",
+	"regexfun-invalid": "L’expression rationnelle « $1 » n’est pas valide.",
 	"regexfun-limit-exceed": "Le nombre maximal de {{PLURAL:$1|$1 gestion d’expression rationnelle|$1 gestions d’expression rationnelles}} \"Regex Fun\" a été atteint."
 }
