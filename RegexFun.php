@@ -45,6 +45,7 @@ $wgHooks['ParserLimitReport'  ][] = 'ExtRegexFun::onParserLimitReport';
 // Include the settings file:
 require_once ExtRegexFun::getDir() . '/RegexFun_Settings.php';
 
+use MediaWiki\Html\Html;
 use Wikimedia\AtEase\AtEase;
 
 /**
