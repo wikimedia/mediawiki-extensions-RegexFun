@@ -46,7 +46,7 @@ $wgHooks['ParserLimitReport'  ][] = 'ExtRegexFun::onParserLimitReport';
 require_once ExtRegexFun::getDir() . '/RegexFun_Settings.php';
 
 use MediaWiki\Html\Html;
-use Wikimedia\AtEase\AtEase;
+use Wikimedia\StringUtils\StringUtils;
 
 /**
  * Extension class with all the regex functions functionality
@@ -155,36 +155,13 @@ class ExtRegexFun {
 		// put purified regex back together:
 		$newPattern = $mainPart . $flagsPart;
 
-		if( ! self::isValidRegex( $newPattern ) ) {
+		if( !StringUtils::isValidPCRERegex( $newPattern ) ) {
 			// no modification to $pattern done!
 			$specialFlags = array();
 			return false;
 		}
 		$pattern = $newPattern; // remember reference!
 		return true;
-	}
-
-	/**
-	 * Returns whether the regular expression would be a valid one or not.
-	 *
-	 * @since 1.0
-	 *
-	 * @param $pattern string
-	 *
-	 * @return boolean
-	 */
-	public static function isValidRegex( $pattern ) {
-		//return (bool)preg_match( '/^([\\/\\|%]).*\\1[imsSuUx]*$/', $pattern );
-		/*
-		 * Testing of the pattern in a very simple way:
-		 * This takes care of all invalid regular expression use and the ugly php notices
-		 * which some other regex extensions for MW won't handle right.
-		 */
-		AtEase::suppressWarnings(); // instead of using the evil @ operator!
-		$isValid = false !== preg_match( $pattern, ' ' ); // preg_match returns false on error
-		AtEase::restoreWarnings();
-
-		return $isValid;
 	}
 
 	/**
